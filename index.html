@@ -7,8 +7,6 @@
   <style>
     :root{
       --bg:#0b0f19;
-      --panel:#111829;
-      --panel2:rgba(255,255,255,.05);
       --line:rgba(255,255,255,.12);
       --text:#eef2ff;
       --muted:#9aa4b2;
@@ -28,7 +26,6 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       line-height:1.35;
     }
-    a{color:inherit}
     .wrap{max-width:1150px;margin:0 auto;padding:18px}
     header{
       position:sticky; top:0; z-index:10;
@@ -41,9 +38,7 @@
       padding:14px 18px;
       max-width:1150px; margin:0 auto;
     }
-    .brand{
-      display:flex; align-items:flex-start; gap:12px;
-    }
+    .brand{display:flex; align-items:flex-start; gap:12px;}
     .logo{
       width:38px; height:38px; border-radius:14px;
       background: radial-gradient(circle at 30% 30%, rgba(124,58,237,.95), rgba(124,58,237,.25));
@@ -52,9 +47,8 @@
     }
     h1{margin:0;font-size:18px;letter-spacing:.2px}
     .sub{margin:4px 0 0;color:var(--muted);font-size:12.5px}
-    .bar{
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-    }
+
+    .bar{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
     .btn{
       background:rgba(255,255,255,.06);
       border:1px solid var(--line);
@@ -68,14 +62,9 @@
     }
     .btn:hover{background:rgba(255,255,255,.09)}
     .btn:active{transform:scale(.98)}
-    .btn.primary{
-      background:rgba(124,58,237,.18);
-      border-color:rgba(124,58,237,.35);
-    }
-    .btn.danger{
-      background:rgba(239,68,68,.14);
-      border-color:rgba(239,68,68,.35);
-    }
+    .btn.primary{background:rgba(124,58,237,.18);border-color:rgba(124,58,237,.35);}
+    .btn.danger{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.35);}
+
     input[type="search"], input[type="password"], textarea{
       background:rgba(255,255,255,.06);
       border:1px solid var(--line);
@@ -87,6 +76,7 @@
     }
     input[type="search"]{min-width:280px;flex:1 1 320px}
     textarea{width:100%;min-height:120px;resize:vertical}
+
     .grid{display:grid;gap:14px}
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -121,6 +111,7 @@
     .tag.parents{border-color:rgba(124,58,237,.35); background:rgba(124,58,237,.12)}
     .tag.child{border-color:rgba(255,255,255,.16)}
     .divider{height:1px;background:var(--line);margin:12px 0}
+
     .tree{
       margin-top:10px;
       padding:10px 10px 6px;
@@ -158,30 +149,20 @@
     .name{font-weight:650;letter-spacing:.2px}
     .count{color:rgba(154,164,178,.9);font-size:12px;margin-left:auto}
     mark{background:rgba(124,58,237,.28);color:var(--text);padding:0 3px;border-radius:5px}
-    .kpi{
-      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px
-    }
-    .kpi .mini{
-      padding:12px;border-radius:18px;border:1px solid var(--line);
-      background:rgba(255,255,255,.04)
-    }
+
+    .kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .kpi .mini{padding:12px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
     .mini .big{font-size:18px;font-weight:750;margin:0}
     .mini .small{margin:4px 0 0;color:var(--muted);font-size:12px}
-    .profile{
-      display:grid; gap:14px;
-      grid-template-columns: 320px 1fr;
-    }
-    @media (max-width: 920px){
-      .profile{grid-template-columns:1fr}
-      .kpi{grid-template-columns:1fr}
-    }
+
+    .profile{display:grid;gap:14px;grid-template-columns:320px 1fr;}
+    @media (max-width: 920px){ .profile{grid-template-columns:1fr} .kpi{grid-template-columns:1fr} }
+
     .avatar{
       width:100%; aspect-ratio: 4/3;
       border-radius:22px;
       border:1px solid var(--line);
-      background:
-        radial-gradient(circle at 30% 30%, rgba(124,58,237,.26), transparent),
-        rgba(255,255,255,.03);
+      background: radial-gradient(circle at 30% 30%, rgba(124,58,237,.26), transparent), rgba(255,255,255,.03);
       display:flex; align-items:center; justify-content:center;
       color:rgba(154,164,178,.9);
       text-align:center;
@@ -189,11 +170,8 @@
     }
     .links{display:flex;gap:10px;flex-wrap:wrap}
     .smallnote{font-size:12px;color:rgba(154,164,178,.9)}
-    .lockscreen{
-      min-height:100dvh;
-      display:flex;align-items:center;justify-content:center;
-      padding:18px;
-    }
+
+    .lockscreen{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:18px;}
     .lockcard{
       width:min(520px, 100%);
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -204,6 +182,59 @@
     }
     .error{color:#fecaca}
     .success{color:#bbf7d0}
+
+    /* MOBILE-FIRST UPGRADES */
+    @media (max-width: 560px){
+      #subtitleTxt { display:none; }
+      #langBtn, #expandAll, #collapseAll, #lockBtn { display:none; }
+      input[type="search"]{ min-width:0; width:100%; flex:1 1 auto; }
+      summary{ padding: 12px 10px; }
+      .btn{ padding: 12px 12px; border-radius: 16px; }
+      ul{ padding-left: 14px; }
+      li{ padding-left: 8px; }
+      li::before{ width: 8px; }
+      .tree{ padding: 8px; }
+      .node{ gap: 8px; }
+      .tag.spouse{ width: 100%; justify-content:flex-start; white-space:normal; }
+      .count{ margin-left: 0; width:100%; }
+      main.wrap{ padding-bottom: 86px; }
+    }
+
+    /* Bottom nav */
+    .bottomnav{
+      position:fixed; left:0; right:0; bottom:0;
+      padding:10px 12px;
+      display:none;
+      gap:10px;
+      justify-content:space-around;
+      background:rgba(11,15,25,.92);
+      border-top:1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      z-index:30;
+    }
+    @media (max-width: 560px){ .bottomnav{ display:flex; } }
+
+    /* More sheet */
+    .sheetOverlay{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      align-items:flex-end;
+      justify-content:center;
+      z-index:40;
+    }
+    .sheet{
+      width:min(680px,100%);
+      border-top-left-radius:24px;
+      border-top-right-radius:24px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(17,24,41,.95);
+      backdrop-filter: blur(14px);
+      padding:14px;
+      box-shadow: 0 -20px 60px rgba(0,0,0,.45);
+    }
+    .sheet h3{margin:4px 0 10px;font-size:14px}
+    .sheet .row{justify-content:space-between}
   </style>
 </head>
 <body>
@@ -219,9 +250,10 @@
     </div>
 
     <div class="bar">
-      <input id="search" type="search" placeholder="Rechercher un nom… (ex: William, Mateza, Bafundila)" />
+      <input id="search" type="search" placeholder="Rechercher un nom…" />
       <button class="btn" id="navTree">Arbre</button>
       <button class="btn" id="navDirectory">Annuaire</button>
+
       <button class="btn" id="langBtn">FR</button>
       <button class="btn" id="expandAll">Tout déplier</button>
       <button class="btn" id="collapseAll">Tout replier</button>
@@ -230,786 +262,376 @@
   </div>
 </header>
 
-<!-- LOCK SCREEN -->
 <section class="lockscreen" id="lockScreen">
   <div class="lockcard">
     <div class="row" style="justify-content:space-between;">
       <div>
-        <h1 style="font-size:20px;margin:0;">Accès privé</h1>
-        <p class="sub" style="margin:6px 0 0;">
-          Entre le mot de passe pour voir l’arbre généalogique.
-        </p>
+        <h1 style="font-size:20px;margin:0;">Private access</h1>
+        <p class="sub" style="margin:6px 0 0;">Enter the password to view the family tree.</p>
       </div>
-      <span class="pill">V2</span>
+      <span class="pill">V2 Mobile</span>
     </div>
 
     <div class="divider"></div>
 
     <div class="grid">
-      <label class="muted" for="pass">Mot de passe</label>
+      <label class="muted" for="pass">Password</label>
       <input id="pass" type="password" placeholder="••••••••" />
-      <button class="btn primary" id="unlockBtn">Déverrouiller</button>
+      <button class="btn primary" id="unlockBtn">Unlock</button>
       <div class="smallnote" id="lockHint"></div>
       <div id="lockMsg" class="error"></div>
-
-      <div class="divider"></div>
-
-      <details>
-        <summary class="muted">Changer le mot de passe (optionnel)</summary>
-        <p class="smallnote" style="margin:10px 0 6px;">
-          Change-le dans le code : <strong>CONFIG.PASSWORD</strong>. (Client-side)
-        </p>
-        <pre style="white-space:pre-wrap;color:rgba(238,242,255,.9);background:rgba(0,0,0,.2);border:1px solid var(--line);padding:12px;border-radius:16px;margin:0;">
-const CONFIG = { PASSWORD: "MVUTU2026" };
-        </pre>
-      </details>
     </div>
   </div>
 </section>
 
 <main class="wrap" id="app" style="display:none;">
-  <section class="card" id="homeCard">
+  <section class="card">
     <div class="row" style="justify-content:space-between;">
       <div>
         <div class="row" style="gap:10px;">
           <h2 style="margin:0;font-size:16px;" id="sectionTitle">Arbre</h2>
           <span class="pill" id="statusPill">Privé</span>
         </div>
-        <p class="muted" style="margin:8px 0 0;" id="sectionDesc">
-          Clique sur un nom pour déplier/replier. Utilise la recherche pour filtrer.
-        </p>
+        <p class="muted" style="margin:8px 0 0;" id="sectionDesc"></p>
       </div>
     </div>
 
     <div class="divider"></div>
-
     <div class="kpi" id="kpis"></div>
-
     <div class="divider"></div>
 
-    <!-- ROUTED CONTENT -->
     <div id="view"></div>
   </section>
 </main>
 
+<nav class="bottomnav" id="bottomNav" aria-label="Bottom navigation">
+  <button class="btn primary" id="bnTree">Tree</button>
+  <button class="btn" id="bnDir">Directory</button>
+  <button class="btn" id="bnSearch">Search</button>
+  <button class="btn" id="bnMore">More</button>
+</nav>
+
+<div class="sheetOverlay" id="sheetOverlay" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <div class="row">
+      <h3 style="margin:0;">More</h3>
+      <button class="btn" id="sheetClose">Close</button>
+    </div>
+    <div class="divider"></div>
+    <div class="grid" style="gap:10px;">
+      <button class="btn" id="mLang">Language</button>
+      <div class="row" style="gap:10px;">
+        <button class="btn" id="mExpand">Expand all</button>
+        <button class="btn" id="mCollapse">Collapse all</button>
+      </div>
+      <button class="btn danger" id="mLock">Lock</button>
+      <div class="smallnote">Tip: for real privacy, use Firebase login (V3).</div>
+    </div>
+  </div>
+</div>
+
 <script>
-/* =========================
-   CONFIG (EDIT THIS)
-========================= */
+/* CONFIG */
 const CONFIG = {
-  PASSWORD: "MVUTU2026", // <-- Change ici
+  PASSWORD: "MVUTU2026",
   BRAND_TITLE_FR: "Famille MVUTU — Arbre & Profils",
   BRAND_TITLE_EN: "MVUTU Family — Tree & Profiles",
 };
 
-/* =========================
-   DATA (EDITABLE JSON)
-========================= */
+/* DATA */
 const rawTree = {
-  id: "marcel-mvutu",
   name: "Marcel MVUTU Kuetutinina",
   deceased: false,
   spouse: { name: "Thérèse Bafundila MAYANGI", deceased: false },
-  parents: [
-    { name: "BAKITANGA", deceased: false },
-    { name: "MELE", deceased: false },
-  ],
+  parents: [{ name: "BAKITANGA" }, { name: "MELE" }],
   siblings: [
-    { relation: "Jeune frère", name: "Grégoire SAKUBA", deceased: false },
-    { relation: "Grande-sœur", name: "Ma SEMI", deceased: false },
+    { relation: "Jeune frère", name: "Grégoire SAKUBA" },
+    { relation: "Grande-sœur", name: "Ma SEMI" },
   ],
   children: [
-    {
-      id:"A",
-      label:"A",
-      name: "Florence VUVU MIATUATAMBUDILA MVUTU",
-      spouse: { name: "Seraphin MATEZA" },
-      children: [
-        { name: "Arsène", deceased: true },
-        {
-          name: "Noranìe MATEZA",
-          spouse: { name: "Raphaël Mpanu Mpanu Bibanda" },
-          children: [
-            { name: "Jéhovah rapha MATEZA" },
-            { name: "Éminence Mpanu" },
-            { name: "Orgi Vuvu" }
-          ]
-        },
-        { name: "Derrick MATEZA" },
-        {
-          name: "Diazuna Mateza Keren",
-          spouse: { name: "Dieudonné Nzila Zengamambu" }
-        },
-        { name: "Tychique MATEZA" },
-        { name: "Ben Éloge MATEZA" }
-      ]
-    },
-
-    {
-      id:"B",
-      label:"B",
-      name: "Florian Prudhomme BAKITANGA MVUTU",
-      spouse: { name: "Vicky MAMBOTE" },
-      children: [
-        { name: "Bueso NSAYI (JOY) MVUTU", spouse: { name: "Cedrick BALISENT" } },
-        { name: "Gedeon MVUTU" },
-        { name: "David MVUTU", spouse: { name: "Dorcas NZAI BOKIE" } },
-        { name: "Florence MAMBOTE MVUTU" }
-      ]
-    },
-
-    {
-      id:"C",
-      label:"C",
-      name: "Placide MAKOLAVUMA MVUTU",
-      spouse: { name: "Bahanungu Ami MANDUKI" },
-      children: [
-        { name: "Abraham Lincoln Kuetutinina MVUTU" },
-        { name: "William Ami Elijah MVUTU" },
-        { name: "Salem Manduki MVUTU" }
-      ]
-    },
-
-    {
-      id:"D",
-      label:"D",
-      name: "Eddie-le-jour NZINGULA",
-      spouse: { name: "Samuel NDEBO", deceased: true },
-      children: [
-        {
-          name: "Magloire Bebiki NDEBO",
-          spouse: { name: "Olivier Maluku Mbomba" },
-          children: [
-            { name: "Moïse Maluku Mbomba" },
-            { name: "Samuel Maluku Mbomba" }
-          ]
-        },
-        { name: "Corneille NDEBO" },
-        { name: "Abigaël BAFUNDILA NDEBO" }
-      ]
-    },
-
-    {
-      id:"E",
-      label:"E",
-      name: "Flavien Mayangi",
-      spouse: { name: "Annie MBAYABU ILUNGA" },
-      children: [
-        { name: "Emmanuel BAKITANGA MVUTU" },
-        { name: "Joseph ILUNGA MVUTU" },
-        { name: "Anna BAFUNDILA MVUTU" },
-        { name: "Elijah Tutinina Mu Yesu Klisto MVUTU" }
-      ]
-    },
-
-    {
-      id:"F",
-      label:"F",
-      name: "Mireille BASOLUKA MVUTU",
-      spouse: { name: "PÉPÉ BANZA" },
-      children: [
-        { name: "Grâce Nehema Banza" },
-        { name: "Divine Basoluka Banza" },
-        { name: "Sifa Kalume Banza" },
-        { name: "Peace Amani Banza" }
-      ]
-    },
-
-    {
-      id:"G",
-      label:"G",
-      name: "EYO Josué MVUTU",
-      deceased: true,
-      spouse: { name: "Nadia MABANZA" },
-      children: [
-        { name: "Manassé-Winner MAYANGI MA MVUTU" },
-        { name: "Amélia HOPE MVUTU" },
-        { name: "Michael MVUTU" },
-        { name: "Gabriel Branson MVUTU" }
-      ]
-    },
-
-    { id:"H", label:"H", name: "Nsayi Bueso Sylvie", deceased: true },
-    { id:"I", label:"I", name: "Gênérose BAKUNDIKA MVUTU" }
+    { label:"A", name:"Florence VUVU MIATUATAMBUDILA MVUTU", spouse:{name:"Seraphin MATEZA"}, children:[
+      { name:"Arsène", deceased:true },
+      { name:"Noranìe MATEZA", spouse:{name:"Raphaël Mpanu Mpanu Bibanda"}, children:[
+        { name:"Jéhovah rapha MATEZA" }, { name:"Éminence Mpanu" }, { name:"Orgi Vuvu" }
+      ]},
+      { name:"Derrick MATEZA" },
+      { name:"Diazuna Mateza Keren", spouse:{name:"Dieudonné Nzila Zengamambu"} },
+      { name:"Tychique MATEZA" },
+      { name:"Ben Éloge MATEZA" }
+    ]},
+    { label:"B", name:"Florian Prudhomme BAKITANGA MVUTU", spouse:{name:"Vicky MAMBOTE"}, children:[
+      { name:"Bueso NSAYI (JOY) MVUTU", spouse:{name:"Cedrick BALISENT"} },
+      { name:"Gedeon MVUTU" },
+      { name:"David MVUTU", spouse:{name:"Dorcas NZAI BOKIE"} },
+      { name:"Florence MAMBOTE MVUTU" }
+    ]},
+    { label:"C", name:"Placide MAKOLAVUMA MVUTU", spouse:{name:"Bahanungu Ami MANDUKI"}, children:[
+      { name:"Abraham Lincoln Kuetutinina MVUTU" },
+      { name:"William Ami Elijah MVUTU" },
+      { name:"Salem Manduki MVUTU" }
+    ]},
+    { label:"D", name:"Eddie-le-jour NZINGULA", spouse:{name:"Samuel NDEBO", deceased:true}, children:[
+      { name:"Magloire Bebiki NDEBO", spouse:{name:"Olivier Maluku Mbomba"}, children:[
+        { name:"Moïse Maluku Mbomba" }, { name:"Samuel Maluku Mbomba" }
+      ]},
+      { name:"Corneille NDEBO" },
+      { name:"Abigaël BAFUNDILA NDEBO" }
+    ]},
+    { label:"E", name:"Flavien Mayangi", spouse:{name:"Annie MBAYABU ILUNGA"}, children:[
+      { name:"Emmanuel BAKITANGA MVUTU" },
+      { name:"Joseph ILUNGA MVUTU" },
+      { name:"Anna BAFUNDILA MVUTU" },
+      { name:"Elijah Tutinina Mu Yesu Klisto MVUTU" }
+    ]},
+    { label:"F", name:"Mireille BASOLUKA MVUTU", spouse:{name:"PÉPÉ BANZA"}, children:[
+      { name:"Grâce Nehema Banza" },
+      { name:"Divine Basoluka Banza" },
+      { name:"Sifa Kalume Banza" },
+      { name:"Peace Amani Banza" }
+    ]},
+    { label:"G", name:"EYO Josué MVUTU", deceased:true, spouse:{name:"Nadia MABANZA"}, children:[
+      { name:"Manassé-Winner MAYANGI MA MVUTU" },
+      { name:"Amélia HOPE MVUTU" },
+      { name:"Michael MVUTU" },
+      { name:"Gabriel Branson MVUTU" }
+    ]},
+    { label:"H", name:"Nsayi Bueso Sylvie", deceased:true },
+    { label:"I", name:"Gênérose BAKUNDIKA MVUTU" }
   ]
 };
 
-/* =========================
-   i18n STRINGS
-========================= */
+/* i18n */
 const I18N = {
-  fr: {
-    brandTitle: CONFIG.BRAND_TITLE_FR,
-    brandSub: "Recherche, branches, et fiches individuelles.",
-    tree: "Arbre",
-    directory: "Annuaire",
-    private: "Privé",
-    clickHint: "Clique sur un nom pour déplier/replier. Utilise la recherche pour filtrer.",
-    statsPeople: "Personnes",
-    statsBranches: "Branches",
-    statsDeceased: "Décédés (†)",
-    patriarch: "Patriarche",
-    spouse: "époux/épouse",
-    parents: "Parents",
-    siblings: "Fratrie",
-    children: "Enfants",
-    back: "Retour",
-    openProfile: "Ouvrir la fiche",
-    notFound: "Aucun résultat.",
-    notes: "Notes (optionnel)",
-    saveNotes: "Sauvegarder",
-    saved: "Sauvegardé ✓",
-    searchPh: "Rechercher un nom…",
-  },
-  en: {
-    brandTitle: CONFIG.BRAND_TITLE_EN,
-    brandSub: "Search, branches, and individual profiles.",
-    tree: "Tree",
-    directory: "Directory",
-    private: "Private",
-    clickHint: "Click a name to expand/collapse. Use search to filter.",
-    statsPeople: "People",
-    statsBranches: "Branches",
-    statsDeceased: "Deceased (†)",
-    patriarch: "Patriarch",
-    spouse: "spouse",
-    parents: "Parents",
-    siblings: "Siblings",
-    children: "Children",
-    back: "Back",
-    openProfile: "Open profile",
-    notFound: "No results.",
-    notes: "Notes (optional)",
-    saveNotes: "Save",
-    saved: "Saved ✓",
-    searchPh: "Search a name…",
-  }
+  fr: { tree:"Arbre", directory:"Annuaire", private:"Privé", clickHint:"Clique sur un nom pour déplier/replier. Utilise la recherche pour filtrer.",
+        people:"Personnes", branches:"Branches", deceased:"Décédés (†)", patriarch:"Patriarche", spouse:"époux/épouse", parents:"Parents", siblings:"Fratrie", children:"Enfants",
+        openProfile:"Ouvrir la fiche", notFound:"Aucun résultat.", more:"Plus", close:"Fermer", expandAll:"Tout déplier", collapseAll:"Tout replier", lock:"Verrouiller",
+        searchPh:"Rechercher un nom…" },
+  en: { tree:"Tree", directory:"Directory", private:"Private", clickHint:"Tap a name to expand/collapse. Use search to filter.",
+        people:"People", branches:"Branches", deceased:"Deceased (†)", patriarch:"Patriarch", spouse:"spouse", parents:"Parents", siblings:"Siblings", children:"Children",
+        openProfile:"Open profile", notFound:"No results.", more:"More", close:"Close", expandAll:"Expand all", collapseAll:"Collapse all", lock:"Lock",
+        searchPh:"Search a name…" }
 };
 
-/* =========================
-   UTILITIES
-========================= */
-const $ = (sel) => document.querySelector(sel);
-function escapeHtml(str=""){
-  return str.replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;" }[m]));
-}
-function highlight(text, q){
+const $ = (s)=>document.querySelector(s);
+function escapeHtml(str=""){ return str.replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;" }[m])); }
+function highlight(text,q){
   if(!q) return escapeHtml(text);
-  const t = text || "";
-  const idx = t.toLowerCase().indexOf(q.toLowerCase());
-  if(idx === -1) return escapeHtml(t);
-  const before = escapeHtml(t.slice(0, idx));
-  const match  = escapeHtml(t.slice(idx, idx+q.length));
-  const after  = escapeHtml(t.slice(idx+q.length));
-  return `${before}<mark>${match}</mark>${after}`;
-}
-function slugify(s){
-  return (s||"").toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-    .replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")
-    .slice(0,70);
-}
-function deepClone(o){ return JSON.parse(JSON.stringify(o)); }
-
-/* =========================
-   BUILD DIRECTORY (unique ids)
-========================= */
-const tree = deepClone(rawTree);
-const people = new Map(); // id => person
-
-function addPerson(p, meta={}){
-  // Create stable-ish id from name + optional branch label + optional parent
-  const base = slugify(p.name || "unknown");
-  const hint = meta.hint ? "-" + slugify(meta.hint) : "";
-  let id = base + hint;
-  let i = 2;
-  while(people.has(id)) { id = base + hint + "-" + i; i++; }
-
-  const person = {
-    id,
-    name: p.name,
-    deceased: !!p.deceased,
-    spouse: p.spouse ? { name: p.spouse.name, deceased: !!p.spouse.deceased } : null,
-    branch: meta.branch || null,
-    label: meta.label || null,
-    // links below filled later
-    parents: [],
-    children: [],
-  };
-  people.set(id, person);
-  return person;
+  const t=text||"", i=t.toLowerCase().indexOf(q.toLowerCase());
+  if(i===-1) return escapeHtml(t);
+  return `${escapeHtml(t.slice(0,i))}<mark>${escapeHtml(t.slice(i,i+q.length))}</mark>${escapeHtml(t.slice(i+q.length))}`;
 }
 
-function traverseBuild(node, meta, parentId=null){
-  const person = addPerson(node, { branch: meta.branch, label: meta.label, hint: meta.hint });
-  if(parentId){
-    person.parents.push(parentId);
-    people.get(parentId).children.push(person.id);
-  }
+/* auth */
+const AUTH_KEY="mvutu_unlocked_v2";
+const isUnlocked=()=>localStorage.getItem(AUTH_KEY)==="1";
+const unlock=()=>localStorage.setItem(AUTH_KEY,"1");
+const lock=()=>localStorage.removeItem(AUTH_KEY);
 
-  // spouse as "linked string" (not separate person unless you want later)
-  if(Array.isArray(node.children)){
-    node.children.forEach((child, idx) => {
-      traverseBuild(child, { branch: meta.branch, label: meta.label, hint: (meta.hint||"")+ "-child"+(idx+1) }, person.id);
-    });
-  }
-  return person.id;
-}
+/* state */
+let lang=(localStorage.getItem("mvutu_lang")||"fr");
+const t=()=>I18N[lang];
+const setLang=(next)=>{ lang=next; localStorage.setItem("mvutu_lang",lang); renderShell(); route(); };
 
-// Patriarch is a person too
-const patriarchId = addPerson({ name: tree.name, deceased: tree.deceased }, { branch: "Patriarch", label: "P", hint:"patriarch" }).id;
+/* sheet */
+function openSheet(){ $("#sheetOverlay").style.display="flex"; }
+function closeSheet(){ $("#sheetOverlay").style.display="none"; }
 
-// attach children as branches A..I under patriarch
-(tree.children||[]).forEach((child, idx) => {
-  const label = child.label || String.fromCharCode(65+idx);
-  traverseBuild(child, { branch: label, label, hint:"branch-"+label }, patriarchId);
-});
-
-// Stats
+/* stats */
 function stats(){
-  let total = people.size;
-  let deceased = 0;
-  for(const p of people.values()) if(p.deceased) deceased++;
-  // branches = unique labels excluding P
-  const branches = new Set();
-  for(const p of people.values()){
-    if(p.label && p.label !== "P") branches.add(p.label);
-  }
-  return { total, deceased, branches: branches.size };
+  const people=[];
+  function walk(n){ people.push(n); (n.children||[]).forEach(walk); }
+  rawTree.children.forEach(walk);
+  const total = people.length + 1; // + Marcel
+  const deceased = (rawTree.deceased?1:0) + people.filter(p=>p.deceased).length;
+  const branches = rawTree.children.length;
+  return {total,deceased,branches};
 }
 
-/* =========================
-   SIMPLE NOTES (localStorage)
-========================= */
-function notesKey(personId){ return "mvutu_notes_"+personId; }
-function loadNotes(personId){ return localStorage.getItem(notesKey(personId)) || ""; }
-function saveNotes(personId, txt){ localStorage.setItem(notesKey(personId), txt); }
-
-/* =========================
-   AUTH (localStorage)
-========================= */
-const AUTH_KEY = "mvutu_unlocked_v2";
-function isUnlocked(){ return localStorage.getItem(AUTH_KEY) === "1"; }
-function lock(){ localStorage.removeItem(AUTH_KEY); }
-function unlock(){ localStorage.setItem(AUTH_KEY, "1"); }
-
-/* =========================
-   APP STATE
-========================= */
-let lang = (localStorage.getItem("mvutu_lang") || "fr");
-function t(){ return I18N[lang]; }
-function setLang(next){
-  lang = next;
-  localStorage.setItem("mvutu_lang", lang);
-  renderShell();
-  route();
-}
-
-/* =========================
-   RENDER SHELL
-========================= */
-function renderShell(){
-  $("#titleTxt").textContent = t().brandTitle;
-  $("#subtitleTxt").textContent = t().brandSub;
-  $("#langBtn").textContent = lang.toUpperCase();
-  $("#navTree").textContent = t().tree;
-  $("#navDirectory").textContent = t().directory;
-  $("#statusPill").textContent = t().private;
-  $("#sectionDesc").textContent = t().clickHint;
-  $("#search").placeholder = t().searchPh;
-  document.title = t().brandTitle;
-
-  // KPIs
-  const s = stats();
-  $("#kpis").innerHTML = `
-    <div class="mini">
-      <p class="big">${s.total}</p>
-      <p class="small">${t().statsPeople}</p>
-    </div>
-    <div class="mini">
-      <p class="big">${s.branches}</p>
-      <p class="small">${t().statsBranches}</p>
-    </div>
-    <div class="mini">
-      <p class="big">${s.deceased}</p>
-      <p class="small">${t().statsDeceased}</p>
-    </div>
-  `;
-}
-
-/* =========================
-   ROUTING (hash)
-   #tree
-   #dir
-   #person/<id>
-========================= */
-function go(hash){ location.hash = hash; }
-function currentHash(){ return (location.hash || "#tree"); }
-
-/* =========================
-   TREE RENDER (interactive)
-========================= */
-function setAllDetails(open){
-  document.querySelectorAll("details").forEach(d => d.open = open);
-}
-
-function subtreeHasMatchNode(node, q){
-  // node: raw tree node structure for the displayed tree (we use rawTree)
+/* tree render */
+function setAllDetails(open){ document.querySelectorAll("details").forEach(d=>d.open=open); }
+function subtreeHasMatch(node,q){
   if(!q) return true;
-  const target = [
-    node.name||"",
-    node.spouse?.name||""
-  ].join(" ").toLowerCase();
+  const target=[node.name||"", node.spouse?.name||""].join(" ").toLowerCase();
   if(target.includes(q.toLowerCase())) return true;
-  if(Array.isArray(node.children)) return node.children.some(c => subtreeHasMatchNode(c, q));
-  return false;
+  return (node.children||[]).some(c=>subtreeHasMatch(c,q));
 }
-
-function renderNodeRaw(node, query){
-  const hasKids = Array.isArray(node.children) && node.children.length > 0;
-  const visible = query ? subtreeHasMatchNode(node, query) : true;
-  const li = document.createElement("li");
-  if(!visible){
-    li.style.display = "none";
-    return li;
-  }
-
-  const deceasedBadge = node.deceased ? `<span class="tag deceased">†</span>` : "";
-  const spouseBadge = node.spouse?.name ? `<span class="tag spouse">${t().spouse}: ${escapeHtml(node.spouse.name)}${node.spouse.deceased ? " †" : ""}</span>` : "";
-
-  // Find directory id to link profile (best-effort by name match)
-  const dirId = findPersonIdByName(node.name);
-  const openBtn = dirId ? `<button class="btn" style="padding:6px 10px;font-size:12px;" data-open="${dirId}">${t().openProfile}</button>` : "";
+function renderNode(node, query){
+  const li=document.createElement("li");
+  if(query && !subtreeHasMatch(node,query)){ li.style.display="none"; return li; }
+  const hasKids=(node.children||[]).length>0;
+  const deceasedBadge=node.deceased?`<span class="tag deceased">†</span>`:"";
+  const spouseBadge=node.spouse?.name?`<span class="tag spouse">${t().spouse}: ${escapeHtml(node.spouse.name)}${node.spouse.deceased?" †":""}</span>`:"";
 
   if(hasKids){
-    const d = document.createElement("details");
-    if(query) d.open = true;
-    const s = document.createElement("summary");
-    s.innerHTML = `
+    const d=document.createElement("details");
+    if(query) d.open=true;
+    const s=document.createElement("summary");
+    s.innerHTML=`
       <span class="node">
-        <span class="name">${highlight(node.name, query)}</span>
+        <span class="name">${highlight(node.name,query)}</span>
         ${deceasedBadge}
         ${spouseBadge}
         <span class="count">${node.children.length} ${t().children.toLowerCase()}</span>
       </span>
-      ${openBtn}
     `;
-    const ul = document.createElement("ul");
-    node.children.forEach(k => ul.appendChild(renderNodeRaw(k, query)));
-    d.appendChild(s);
-    d.appendChild(ul);
+    const ul=document.createElement("ul");
+    node.children.forEach(ch=>ul.appendChild(renderNode(ch,query)));
+    d.appendChild(s); d.appendChild(ul);
     li.appendChild(d);
   } else {
-    li.innerHTML = `
+    li.innerHTML=`
       <div class="node">
-        <span class="name">${highlight(node.name, query)}</span>
+        <span class="name">${highlight(node.name,query)}</span>
         ${deceasedBadge}
         ${spouseBadge}
-        ${openBtn}
       </div>
     `;
   }
   return li;
 }
 
-function findPersonIdByName(name){
-  if(!name) return null;
-  const n = name.trim().toLowerCase();
-  // exact match first
-  for(const p of people.values()){
-    if((p.name||"").trim().toLowerCase() === n) return p.id;
-  }
-  // contains match fallback
-  for(const p of people.values()){
-    if((p.name||"").toLowerCase().includes(n)) return p.id;
-  }
-  return null;
-}
-
 function renderTreeView(query){
-  const view = $("#view");
-  $("#sectionTitle").textContent = t().tree;
-  view.innerHTML = `
+  $("#sectionTitle").textContent=t().tree;
+  $("#sectionDesc").textContent=t().clickHint;
+  const view=$("#view");
+  view.innerHTML=`
     <div class="row" style="justify-content:space-between;align-items:flex-start;">
       <div>
-        <div class="tag parents">${t().patriarch}: ${escapeHtml(tree.name)}${tree.deceased ? " †" : ""}</div>
+        <div class="tag parents">${t().patriarch}: ${escapeHtml(rawTree.name)}${rawTree.deceased?" †":""}</div>
         <div class="row" style="margin-top:10px;gap:8px;flex-wrap:wrap;">
-          ${tree.spouse?.name ? `<span class="tag spouse">${t().spouse}: ${escapeHtml(tree.spouse.name)}${tree.spouse.deceased ? " †" : ""}</span>` : ""}
-          ${tree.parents?.length ? `<span class="tag parents">${t().parents}: ${tree.parents.map(p => escapeHtml(p.name)+(p.deceased?" †":"")).join(" & ")}</span>` : ""}
-          ${tree.siblings?.length ? `<span class="tag">${t().siblings}: ${tree.siblings.map(s => escapeHtml(s.relation+" — "+s.name)+(s.deceased?" †":"")).join(" • ")}</span>` : ""}
+          ${rawTree.spouse?.name?`<span class="tag spouse">${t().spouse}: ${escapeHtml(rawTree.spouse.name)}${rawTree.spouse.deceased?" †":""}</span>`:""}
+          ${rawTree.parents?.length?`<span class="tag parents">${t().parents}: ${rawTree.parents.map(p=>escapeHtml(p.name)).join(" & ")}</span>`:""}
+          ${rawTree.siblings?.length?`<span class="tag">${t().siblings}: ${rawTree.siblings.map(s=>escapeHtml(s.relation+" — "+s.name)).join(" • ")}</span>`:""}
         </div>
       </div>
     </div>
-
     <div class="tree" id="treeBox"></div>
-    <p class="smallnote" style="margin:10px 0 0;">
-      ${t().clickHint} — ${t().statsDeceased}
-    </p>
   `;
-
-  const treeBox = $("#treeBox");
-  const ul = document.createElement("ul");
-  (tree.children||[]).forEach(child => ul.appendChild(renderNodeRaw(child, query)));
-  treeBox.appendChild(ul);
-
-  // bind open profile buttons
-  view.querySelectorAll("[data-open]").forEach(btn=>{
-    btn.addEventListener("click", (e)=>{
-      const id = e.currentTarget.getAttribute("data-open");
-      go("#person/" + id);
-    });
-  });
+  const ul=document.createElement("ul");
+  rawTree.children.forEach(ch=>ul.appendChild(renderNode(ch,query)));
+  $("#treeBox").appendChild(ul);
 }
 
-/* =========================
-   DIRECTORY VIEW
-========================= */
-function renderDirectory(query){
-  $("#sectionTitle").textContent = t().directory;
-  const view = $("#view");
-
-  // build list sorted
-  const arr = Array.from(people.values()).sort((a,b)=> (a.name||"").localeCompare(b.name||""));
-  const q = (query||"").trim().toLowerCase();
-  const filtered = q ? arr.filter(p=>{
-    const target = [p.name, p.spouse?.name, p.branch, p.label].filter(Boolean).join(" ").toLowerCase();
-    return target.includes(q);
-  }) : arr;
-
-  if(filtered.length === 0){
-    view.innerHTML = `<div class="muted">${t().notFound}</div>`;
-    return;
+/* directory (simple list) */
+function flatten(){
+  const out=[{name:rawTree.name,deceased:rawTree.deceased,spouse:rawTree.spouse,label:"P"}];
+  function walk(n,label){
+    out.push({name:n.name,deceased:!!n.deceased,spouse:n.spouse||null,label});
+    (n.children||[]).forEach(ch=>walk(ch,label));
   }
-
-  view.innerHTML = `
+  rawTree.children.forEach(ch=>walk(ch,ch.label||"?"));
+  return out;
+}
+function renderDirectory(query){
+  $("#sectionTitle").textContent=t().directory;
+  $("#sectionDesc").textContent=t().clickHint;
+  const view=$("#view");
+  const q=(query||"").trim().toLowerCase();
+  const list=flatten().sort((a,b)=>a.name.localeCompare(b.name));
+  const filtered=q?list.filter(p=>[p.name,p.spouse?.name,p.label].filter(Boolean).join(" ").toLowerCase().includes(q)):list;
+  if(!filtered.length){ view.innerHTML=`<div class="muted">${t().notFound}</div>`; return; }
+  view.innerHTML=`
     <div class="grid" style="gap:10px;">
       ${filtered.map(p=>`
         <div class="card" style="padding:14px;">
           <div class="row" style="justify-content:space-between;align-items:flex-start;">
             <div>
               <div class="row" style="gap:8px;">
-                <div class="name">${escapeHtml(p.name)} ${p.deceased ? `<span class="tag deceased">†</span>`:""}</div>
-                ${p.label && p.label!=="P" ? `<span class="tag">Branche ${escapeHtml(p.label)}</span>` : (p.label==="P" ? `<span class="tag parents">${t().patriarch}</span>` : "")}
+                <div class="name">${escapeHtml(p.name)} ${p.deceased?`<span class="tag deceased">†</span>`:""}</div>
+                ${p.label && p.label!=="P"?`<span class="tag">Branch ${escapeHtml(p.label)}</span>`:`<span class="tag parents">${t().patriarch}</span>`}
               </div>
               <div class="row" style="margin-top:8px;gap:8px;flex-wrap:wrap;">
-                ${p.spouse?.name ? `<span class="tag spouse">${t().spouse}: ${escapeHtml(p.spouse.name)}${p.spouse.deceased ? " †":""}</span>` : ""}
-                ${p.parents.length ? `<span class="tag">${t().parents}: ${p.parents.map(id=>escapeHtml(people.get(id)?.name||"")).join(" • ")}</span>` : ""}
-                ${p.children.length ? `<span class="tag child">${t().children}: ${p.children.length}</span>` : ""}
+                ${p.spouse?.name?`<span class="tag spouse">${t().spouse}: ${escapeHtml(p.spouse.name)}${p.spouse.deceased?" †":""}</span>`:""}
               </div>
-            </div>
-            <div class="links">
-              <button class="btn primary" data-person="${p.id}">${t().openProfile}</button>
             </div>
           </div>
         </div>
       `).join("")}
     </div>
   `;
-
-  view.querySelectorAll("[data-person]").forEach(btn=>{
-    btn.addEventListener("click", (e)=>{
-      go("#person/" + e.currentTarget.getAttribute("data-person"));
-    });
-  });
 }
 
-/* =========================
-   PROFILE VIEW
-========================= */
-function renderProfile(personId){
-  const p = people.get(personId);
-  const view = $("#view");
-
-  if(!p){
-    view.innerHTML = `<div class="muted">${t().notFound}</div>`;
-    return;
-  }
-
-  $("#sectionTitle").textContent = escapeHtml(p.name);
-
-  const parents = p.parents.map(id=>people.get(id)).filter(Boolean);
-  const children = p.children.map(id=>people.get(id)).filter(Boolean);
-
-  const notes = loadNotes(p.id);
-
-  view.innerHTML = `
-    <div class="profile">
-      <div class="grid">
-        <div class="avatar">
-          <div>
-            <div style="font-weight:750;font-size:14px;">Photo / Vidéo</div>
-            <div class="smallnote" style="margin-top:6px;">
-              (V3: upload photos, archives, audio interviews)
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="padding:14px;">
-          <div class="row" style="justify-content:space-between;align-items:flex-start;">
-            <div>
-              <div class="row" style="gap:10px;">
-                <div class="name" style="font-size:16px;">${escapeHtml(p.name)}</div>
-                ${p.deceased ? `<span class="tag deceased">†</span>` : ``}
-                ${p.label && p.label!=="P" ? `<span class="tag">Branche ${escapeHtml(p.label)}</span>` : (p.label==="P" ? `<span class="tag parents">${t().patriarch}</span>` : "")}
-              </div>
-
-              <div class="row" style="margin-top:10px;gap:8px;flex-wrap:wrap;">
-                ${p.spouse?.name ? `<span class="tag spouse">${t().spouse}: ${escapeHtml(p.spouse.name)}${p.spouse.deceased ? " †":""}</span>` : `<span class="tag muted">${t().spouse}: —</span>`}
-              </div>
-            </div>
-            <button class="btn" id="backBtn">${t().back}</button>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="grid" style="gap:10px;">
-            <div>
-              <div class="muted" style="font-size:12px;margin-bottom:6px;">${t().parents}</div>
-              <div class="row" style="gap:8px;flex-wrap:wrap;">
-                ${parents.length ? parents.map(pp=>`<button class="btn" style="padding:7px 10px;font-size:12px;" data-go="${pp.id}">${escapeHtml(pp.name)}</button>`).join("") : `<span class="muted">—</span>`}
-              </div>
-            </div>
-
-            <div>
-              <div class="muted" style="font-size:12px;margin-bottom:6px;">${t().children}</div>
-              <div class="row" style="gap:8px;flex-wrap:wrap;">
-                ${children.length ? children.map(cc=>`<button class="btn" style="padding:7px 10px;font-size:12px;" data-go="${cc.id}">${escapeHtml(cc.name)}${cc.deceased?" †":""}</button>`).join("") : `<span class="muted">—</span>`}
-              </div>
-            </div>
-
-            <div>
-              <div class="muted" style="font-size:12px;margin-bottom:6px;">${t().notes}</div>
-              <textarea id="notesBox" placeholder="Ex: lieu de naissance, histoire, dates, photos à ajouter…">${escapeHtml(notes)}</textarea>
-              <div class="row" style="justify-content:space-between;">
-                <button class="btn primary" id="saveNotesBtn">${t().saveNotes}</button>
-                <span class="smallnote" id="saveMsg"></span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h2 style="margin:0 0 8px;font-size:14px;">Branching</h2>
-          <p class="muted" style="margin:0;">
-            V3 possible: dates, lieux, carte de migration, galerie photos, export GEDCOM/CSV, accès multi-utilisateurs.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 style="margin:0 0 8px;font-size:14px;">Accès rapide</h2>
-          <div class="row">
-            <button class="btn" onclick="go('#tree')">${t().tree}</button>
-            <button class="btn" onclick="go('#dir')">${t().directory}</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  $("#backBtn").addEventListener("click", ()=>{
-    // back to dir if coming from there? keep simple:
-    if(history.length > 1) history.back();
-    else go("#dir");
-  });
-
-  view.querySelectorAll("[data-go]").forEach(b=>{
-    b.addEventListener("click",(e)=> go("#person/" + e.currentTarget.getAttribute("data-go")));
-  });
-
-  $("#saveNotesBtn").addEventListener("click", ()=>{
-    const txt = $("#notesBox").value || "";
-    saveNotes(p.id, txt);
-    $("#saveMsg").textContent = t().saved;
-    $("#saveMsg").className = "success smallnote";
-    setTimeout(()=> { if($("#saveMsg")) $("#saveMsg").textContent=""; }, 1500);
-  });
-}
-
-/* =========================
-   ROUTE HANDLER
-========================= */
+/* routing */
+function go(hash){ location.hash=hash; }
+function currentHash(){ return location.hash || "#tree"; }
 function route(){
-  const hash = currentHash();
-  const q = ($("#search").value || "").trim();
-
-  if(hash.startsWith("#person/")){
-    const id = hash.slice("#person/".length);
-    renderProfile(id);
-    return;
-  }
-  if(hash === "#dir"){
-    renderDirectory(q);
-    return;
-  }
-  // default
-  renderTreeView(q);
+  const q=($("#search").value||"").trim();
+  if(currentHash()==="#dir") renderDirectory(q);
+  else renderTreeView(q);
 }
 
-/* =========================
-   EVENTS
-========================= */
+/* shell */
+function renderShell(){
+  $("#titleTxt").textContent = (lang==="fr"?CONFIG.BRAND_TITLE_FR:CONFIG.BRAND_TITLE_EN);
+  $("#subtitleTxt").textContent = (lang==="fr"?"Recherche, branches, et fiches individuelles.":"Search, branches, and individual profiles.");
+  $("#navTree").textContent=t().tree;
+  $("#navDirectory").textContent=t().directory;
+  $("#statusPill").textContent=t().private;
+  $("#search").placeholder=t().searchPh;
+
+  $("#bnTree").textContent=t().tree;
+  $("#bnDir").textContent=t().directory;
+  $("#bnMore").textContent=t().more;
+  $("#sheetClose").textContent=t().close;
+  $("#mExpand").textContent=t().expandAll;
+  $("#mCollapse").textContent=t().collapseAll;
+  $("#mLock").textContent=t().lock;
+
+  const s=stats();
+  $("#kpis").innerHTML=`
+    <div class="mini"><p class="big">${s.total}</p><p class="small">${t().people}</p></div>
+    <div class="mini"><p class="big">${s.branches}</p><p class="small">${t().branches}</p></div>
+    <div class="mini"><p class="big">${s.deceased}</p><p class="small">${t().deceased}</p></div>
+  `;
+}
+
+/* init */
 function initApp(){
-  // auth gate
   if(!isUnlocked()){
-    $("#lockScreen").style.display = "flex";
-    $("#appHeader").style.display = "none";
-    $("#app").style.display = "none";
-    $("#lockHint").textContent = `Mot de passe actuel (exemple): ${CONFIG.PASSWORD}`;
+    $("#lockScreen").style.display="flex";
+    $("#appHeader").style.display="none";
+    $("#app").style.display="none";
+    $("#lockHint").textContent = `Current password: ${CONFIG.PASSWORD}`;
     return;
   }
-
-  $("#lockScreen").style.display = "none";
-  $("#appHeader").style.display = "block";
-  $("#app").style.display = "block";
-
+  $("#lockScreen").style.display="flex"; // keeps layout stable briefly
+  $("#lockScreen").style.display="none";
+  $("#appHeader").style.display="block";
+  $("#app").style.display="block";
   renderShell();
   route();
 }
 
+/* events */
 window.addEventListener("hashchange", route);
+$("#search").addEventListener("input", route);
 
 $("#unlockBtn").addEventListener("click", ()=>{
-  const val = ($("#pass").value || "").trim();
-  if(val === CONFIG.PASSWORD){
-    unlock();
-    $("#lockMsg").textContent = "";
-    initApp();
-    // go to tree on unlock
-    if(!location.hash) location.hash = "#tree";
-  } else {
-    $("#lockMsg").textContent = "Mot de passe incorrect.";
-  }
+  const val=($("#pass").value||"").trim();
+  if(val===CONFIG.PASSWORD){ unlock(); $("#lockMsg").textContent=""; initApp(); if(!location.hash) location.hash="#tree"; }
+  else $("#lockMsg").textContent="Incorrect password.";
 });
+$("#pass").addEventListener("keydown",(e)=>{ if(e.key==="Enter") $("#unlockBtn").click(); });
 
-$("#pass").addEventListener("keydown", (e)=>{
-  if(e.key === "Enter") $("#unlockBtn").click();
-});
+$("#navTree").addEventListener("click",()=>go("#tree"));
+$("#navDirectory").addEventListener("click",()=>go("#dir"));
+$("#langBtn").addEventListener("click",()=>setLang(lang==="fr"?"en":"fr"));
+$("#expandAll").addEventListener("click",()=>setAllDetails(true));
+$("#collapseAll").addEventListener("click",()=>setAllDetails(false));
+$("#lockBtn").addEventListener("click",()=>{ lock(); location.hash="#tree"; initApp(); });
 
-$("#lockBtn").addEventListener("click", ()=>{
-  lock();
-  location.hash = "#tree";
-  initApp();
-});
+$("#bnTree").addEventListener("click",()=>go("#tree"));
+$("#bnDir").addEventListener("click",()=>go("#dir"));
+$("#bnSearch").addEventListener("click",()=>$("#search").focus());
+$("#bnMore").addEventListener("click",openSheet);
 
-$("#langBtn").addEventListener("click", ()=>{
-  setLang(lang === "fr" ? "en" : "fr");
-});
+$("#sheetClose").addEventListener("click",closeSheet);
+$("#sheetOverlay").addEventListener("click",(e)=>{ if(e.target.id==="sheetOverlay") closeSheet(); });
+$("#mLang").addEventListener("click",()=>{ setLang(lang==="fr"?"en":"fr"); closeSheet(); });
+$("#mExpand").addEventListener("click",()=>{ setAllDetails(true); closeSheet(); });
+$("#mCollapse").addEventListener("click",()=>{ setAllDetails(false); closeSheet(); });
+$("#mLock").addEventListener("click",()=>{ lock(); closeSheet(); location.hash="#tree"; initApp(); });
 
-$("#navTree").addEventListener("click", ()=> go("#tree"));
-$("#navDirectory").addEventListener("click", ()=> go("#dir"));
-
-$("#expandAll").addEventListener("click", ()=> setAllDetails(true));
-$("#collapseAll").addEventListener("click", ()=> setAllDetails(false));
-
-$("#search").addEventListener("input", ()=>{
-  // rerender current view with filter
-  route();
-});
-
-/* Boot */
 initApp();
 </script>
 
